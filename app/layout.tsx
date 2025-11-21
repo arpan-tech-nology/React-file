@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import AnousementBar from "@/components/AnousmentBar";
+import Footer from "@/components/Footer";
+import Testimonial from "@/components/Testimonial";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +28,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet"></link>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossOrigin="anonymous" referrerPolicy="no-referrer" />
+
+
+         <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        >
+        <AnousementBar/>
+        <Header/>
+        <Testimonial/>
+        <Footer/>
+        
         {children}
+         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+       
+
+        
       </body>
     </html>
   );
